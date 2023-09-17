@@ -29,5 +29,10 @@ Route::group(['prefix' => 'admin'], function() {
     Route::group(['middleware' => 'admin.auth'], function() {
         Route::get('/dashboard',[App\Http\Controllers\HomeController::class, 'index'])->name('admin.dashboard');
         Route::get('/logout',[App\Http\Controllers\HomeController::class, 'logout'])->name('admin.logout');
+
+        //Category
+        Route::get('/categories/create',[App\Http\Controllers\CategoryController::class, 'create'])->name('categories.create');
+        Route::post('/categories',[App\Http\Controllers\CategoryController::class, 'store'])->name('categories.store');
+        Route::get('/categories',[App\Http\Controllers\CategoryController::class, 'index'])->name('categories.index');
     });
 });
