@@ -34,5 +34,8 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('/categories/create',[App\Http\Controllers\CategoryController::class, 'create'])->name('categories.create');
         Route::post('/categories',[App\Http\Controllers\CategoryController::class, 'store'])->name('categories.store');
         Route::get('/categories',[App\Http\Controllers\CategoryController::class, 'index'])->name('categories.index');
+
+        //temp-images.create
+        Route::post('/upload-temp-image',[App\Http\Controllers\TempImagesController::class, 'create'])->name('temp-images.create');
     });
 });
