@@ -38,6 +38,15 @@ Route::group(['prefix' => 'admin'], function() {
         Route::put('/categories/{category}/update',[App\Http\Controllers\CategoryController::class, 'update'])->name('categories.update');
         Route::delete('/categories/{category}/delete',[App\Http\Controllers\CategoryController::class, 'destroy'])->name('categories.delete');
 
+        //Sub-Category
+        Route::get('/sub-categories',[App\Http\Controllers\SubCategoryController::class, 'index'])->name('sub-categories.index');
+        Route::get('/sub-categories/create',[App\Http\Controllers\SubCategoryController::class, 'create'])->name('sub-categories.create');
+        Route::post('/sub-categories',[App\Http\Controllers\SubCategoryController::class, 'store'])->name('sub-categories.store');
+        Route::get('/sub-categories/{subCategory}/edit',[App\Http\Controllers\SubCategoryController::class, 'edit'])->name('sub-categories.edit');
+        Route::put('/sub-categories/{subCategory}/update',[App\Http\Controllers\SubCategoryController::class, 'update'])->name('sub-categories.update');
+        Route::delete('/sub-categories/{subCategory}/delete',[App\Http\Controllers\SubCategoryController::class, 'destroy'])->name('sub-categories.delete');
+
+
         //temp-images.create
         Route::post('/upload-temp-image',[App\Http\Controllers\TempImagesController::class, 'create'])->name('temp-images.create');
     });
