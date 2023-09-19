@@ -105,8 +105,6 @@ class CategoryController extends Controller
         ]);
 
         if ($validator->passes()){
-
-            $category = new Category();
             $category->name = $request->name;
             $category->slug = $request->slug;
             $category->status = $request->status;
@@ -163,7 +161,7 @@ class CategoryController extends Controller
         if (empty($category)){
             $request->session()-flash('error','Category not found');
             return response()->json([
-                'status' => true,
+                'status' => false,
                 'message' => 'Category Not Found',
             ]);
         }
