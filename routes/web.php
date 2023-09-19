@@ -46,6 +46,13 @@ Route::group(['prefix' => 'admin'], function() {
         Route::put('/sub-categories/{subCategory}/update',[App\Http\Controllers\SubCategoryController::class, 'update'])->name('sub-categories.update');
         Route::delete('/sub-categories/{subCategory}/delete',[App\Http\Controllers\SubCategoryController::class, 'destroy'])->name('sub-categories.delete');
 
+        //Brand
+        Route::get('/brand',[App\Http\Controllers\BrandController::class, 'index'])->name('brand.index');
+        Route::get('/brand/create',[App\Http\Controllers\BrandController::class, 'create'])->name('brand.create');
+        Route::post('/brand',[App\Http\Controllers\BrandController::class, 'store'])->name('brand.store');
+        Route::get('/brand/{brand}/edit',[App\Http\Controllers\BrandController::class, 'edit'])->name('brand.edit');
+        Route::put('/brand/{brand}/update',[App\Http\Controllers\BrandController::class, 'update'])->name('brand.update');
+        Route::delete('/brand/{brand}/delete',[App\Http\Controllers\BrandController::class, 'destroy'])->name('brand.delete');
 
         //temp-images.create
         Route::post('/upload-temp-image',[App\Http\Controllers\TempImagesController::class, 'create'])->name('temp-images.create');

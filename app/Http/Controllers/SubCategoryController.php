@@ -76,7 +76,10 @@ class SubCategoryController extends Controller
             return redirect()->route('sub-categories.index');
         }
 
-        return view ('admin.sub-category.edit',compact('subCategory','categories'));
+        return view ('admin.sub-category.edit',[
+            'subCategory' => $subCategory ,
+            'categories' => $categories,
+        ]);
     }
 
     public function update($id, Request $request){
