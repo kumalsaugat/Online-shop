@@ -56,5 +56,13 @@ Route::group(['prefix' => 'admin'], function() {
 
         //temp-images.create
         Route::post('/upload-temp-image',[App\Http\Controllers\TempImagesController::class, 'create'])->name('temp-images.create');
+
+        //Product
+        Route::get('/product',[App\Http\Controllers\ProductController::class, 'index'])->name('product.index');
+        Route::get('/product/create',[App\Http\Controllers\ProductController::class, 'create'])->name('product.create');
+        Route::post('/product',[App\Http\Controllers\ProductController::class, 'store'])->name('product.store');
+
+        Route::get('/product-subcategories',[App\Http\Controllers\ProductSubCategoryController::class, 'index'])->name('product-subcategories.index');
+
     });
 });
