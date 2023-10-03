@@ -103,7 +103,7 @@ class ProductController extends Controller
                     $destPath = public_path().'/uploads/product/large/'.$tempImageInfo->name;
                     $image = Image::make($sourcePath);
                     $image->resize(1400, null,function ($constraint){
-                        $constraint->aspectRatio();
+                    $constraint->aspectRatio();
                     });
                     $image->save($destPath);
 
