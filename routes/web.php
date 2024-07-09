@@ -54,6 +54,8 @@ Route::group(['prefix' => 'admin'], function() {
         Route::put('/brand/{brand}/update',[App\Http\Controllers\BrandController::class, 'update'])->name('brand.update');
         Route::delete('/brand/{brand}/delete',[App\Http\Controllers\BrandController::class, 'destroy'])->name('brand.delete');
 
+
+        //
         //temp-images.create
         Route::post('/upload-temp-image',[App\Http\Controllers\TempImagesController::class, 'create'])->name('temp-images.create');
 
